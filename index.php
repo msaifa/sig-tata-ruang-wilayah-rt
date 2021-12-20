@@ -31,7 +31,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Coba Save Region on Maps to Database</title>
+	<title>Pendataan Tata Ruang</title>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBw6bnAk0C2jIDDbz_dVRso9gUEnHLTH68&sensor=false"></script>
 	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="polygon.min.js"></script>
@@ -129,32 +129,43 @@
 	});	
 	</script>
 </head>
-<body>
+<body style="background-color: #888;">
 	<div style="margin:auto;  width: auto; ">
 		<div id="main-map" style="height: 500px;">
 		</div>
 		<center>
 			<form action="index.php" method="POST" id="map-form">         
 	            <input type="hidden" name="coords" id="map-coords" value=""/>
-	            <label>Nama Wilayah</label><input type="text" name="nama_pemilik" id="nama_pemilik"></input><br>
-				<label>Luas Lahan</label><input type="number" name="luas_lahan" id="luas_lahan"></input><br>
-				<input type="submit" value="Save"/>             
-	            <input type="reset" value="Reset"/>
+				<table cellspacing="10">
+					<tr>
+	            		<td><label style="color: #efefef;">Nama Pemilik</label></td>
+						<td><input type="text" name="nama_pemilik" id="nama_pemilik" ></input></td>
+					</tr>
+					<tr>
+						<td><label style="color: #efefef;">Luas Lahan</label></td>
+						<td><input type="number" name="luas_lahan" id="luas_lahan"></input><br></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Save" style="border-radius:5px; width: 4.4cm; 
+	height: 0.8cm;"/></td>
+						<td><input type="reset" value="Reset"style="border-radius:5px; width: 4.4cm; 
+	height: 0.8cm;"/></td>            	
+				</table>
 	        </form>
 		</center>
 	</div>
 	<div id="side">
-		<input id="reset" value="Reset Marker Polygon" type="button" class="navi"/>
-		<input id="showData"  value="Show Paths (class function) " type="button" class="navi"/>
-		<div   id="dataPanel">
+		<input style="font-size:14px; margin-left: 30px; border-radius:5px; width: 9cm;" id="reset" value="Reset Marker Polygon" type="button" class="navi"/>
+		<input style="font-size:14px; margin-left: 30px; border-radius:5px; width: 9cm;" id="showData"  value="Show Paths" type="button" class="navi"/>
+		<div   id="dataPanel" style="margin-left: 30px; background-color: #efefef;">
 		</div>
 	</div>
 	<br>
 	<br>
-	<table border="1" width="100%">
+	<table border="1" width="80%" style=" background-color: #efefef; margin-left: 120px;">
 		<tr>
 			<th>No.</th>
-			<th>Nama Wilayah</th>
+			<th>Nama Pemilik</th>
 			<th>Luas Lahan</th>
 			<th>Action</th>
 		</tr>
